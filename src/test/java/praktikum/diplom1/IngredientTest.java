@@ -18,7 +18,7 @@ public class IngredientTest {
         this.type = type;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1}")
     public static Object[][] getIngredient() {
         return new Object[][]{
                 {"Булочка", 10, IngredientType.FILLING},
@@ -45,6 +45,4 @@ public class IngredientTest {
         IngredientType actualType = ingredient.getType();
         Assert.assertEquals(type, actualType);
     }
-
-
 }

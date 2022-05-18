@@ -10,12 +10,12 @@ public class BunTest {
 
     @Test
     public void getName() {
-        Assert.assertEquals(bun.getName(), "test");
+        Assert.assertEquals("test", bun.getName());
     }
 
     @Test
     public void getPrice() {
-        Assert.assertEquals(bun.getPrice(), 15,2);
+        Assert.assertEquals(15,2, bun.getPrice());
     }
 
 }

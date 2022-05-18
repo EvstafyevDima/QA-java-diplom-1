@@ -7,12 +7,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
-
-
 
 @RunWith(MockitoJUnitRunner.class)
 public class BurgerTest {
@@ -25,15 +22,12 @@ public class BurgerTest {
     @Mock
     Ingredient ingredient;
 
-
     @Test
     public void setBunsNameTest() {
         burger.setBuns(bun);
         Mockito.when(bun.getName()).thenReturn("Brezel");
         assertEquals("Brezel", burger.bun.getName());
-
     }
-
 
     @Test
     public void addThreeIngredientsTest() {
@@ -58,17 +52,12 @@ public class BurgerTest {
         assertEquals(2, burger.ingredients.size());
     }
 
-
-
     @Test
     public void getReceiptIngredientTest() {
         burger.setBuns(bun);
         burger.addIngredient(ingredient);
-
         Mockito.when(bun.getName()).thenReturn("Brezel");
         Mockito.when(ingredient.getType()).thenReturn(IngredientType.FILLING);
-
         assertThat(burger.getReceipt(), containsString("==== Brezel ===="));
     }
-
 }
